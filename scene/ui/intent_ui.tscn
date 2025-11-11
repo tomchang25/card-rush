@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cakoc1446j3ja"]
+
+[ext_resource type="Script" uid="uid://caxytast8s51g" path="res://scene/ui/intent_ui.gd" id="1_22lxc"]
+[ext_resource type="Texture2D" uid="uid://bxgrktox5it82" path="res://art/tile_0105.png" id="1_ss0y8"]
+
+[node name="IntentUI" type="HBoxContainer"]
+custom_minimum_size = Vector2(40, 20)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 16.0
+grow_horizontal = 2
+alignment = 1
+script = ExtResource("1_22lxc")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("1_ss0y8")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1

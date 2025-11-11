@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt7nvrctc5urb"]
+
+[ext_resource type="Theme" uid="uid://den0c88qxg2fn" path="res://main_theme.tres" id="1_jelon"]
+[ext_resource type="Script" uid="uid://bx0xstq7f7xrl" path="res://scene/ui/tooltip.gd" id="2_eg02s"]
+[ext_resource type="Texture2D" uid="uid://ck1t4hdip6xrl" path="res://art/tile_0119.png" id="2_mlyyi"]
+
+[node name="Tooltip" type="PanelContainer"]
+custom_minimum_size = Vector2(140, 40)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_right = 70.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme = ExtResource("1_jelon")
+script = ExtResource("2_eg02s")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("2_mlyyi")
+stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "Test [color=\"ff0000\"]112[/color]
+Tooltip description."
+fit_content = true
