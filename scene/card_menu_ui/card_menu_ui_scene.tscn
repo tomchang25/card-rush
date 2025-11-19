@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://kxihqclyr7oe"]
+
+[ext_resource type="PackedScene" uid="uid://py64ndp06xei" path="res://scene/card_ui/card_visual.tscn" id="1_wl35u"]
+
+[node name="CardMenuUI" type="CenterContainer"]
+offset_right = 30.0
+offset_bottom = 40.0
+
+[node name="CardVisual" parent="." instance=ExtResource("1_wl35u")]
+layout_mode = 2

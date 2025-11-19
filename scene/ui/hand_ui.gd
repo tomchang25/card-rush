@@ -4,7 +4,6 @@ class_name HandUI extends HBoxContainer
 
 @onready var card_ui_scene: PackedScene = preload("res://scene/card_ui/card_ui.tscn")
 
-
 var cards_play_this_turn := 0
 
 func add_card(card: Card) -> void:

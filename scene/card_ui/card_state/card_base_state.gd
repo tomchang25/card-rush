@@ -13,7 +13,7 @@ func enter() -> void:
     card_ui.reparent_requested.emit(card_ui)
     card_ui.pivot_offset = Vector2.ZERO
 
-    card_ui.set_stylebox(card_ui.CardStylebox.BASE_STYLEBOX)
+    card_ui.card_visual.apply_base_style()
 
     Events.card_tooltip_hide_requested.emit()
 
@@ -29,7 +29,7 @@ func on_mouse_entered() -> void:
     if card_ui.disabled or not card_ui.playable:
         return
 
-    card_ui.set_stylebox(card_ui.CardStylebox.HOVER_STYLEBOX)
+    card_ui.card_visual.apply_hover_style()
 
     Events.card_tooltip_requested.emit(card_ui.card.icon, card_ui.card.tooltip_text)
 
@@ -37,6 +37,6 @@ func on_mouse_exited() -> void:
     if card_ui.disabled or not card_ui.playable:
         return
 
-    card_ui.set_stylebox(card_ui.CardStylebox.BASE_STYLEBOX)
+    card_ui.card_visual.apply_base_style()
 
     Events.card_tooltip_hide_requested.emit()

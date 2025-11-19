@@ -15,7 +15,7 @@ func enter() -> void:
 
     # card_ui.color.color = Color.NAVY_BLUE
     # card_ui.state.text = "DRAGGING"
-    card_ui.set_stylebox(card_ui.CardStylebox.DRAG_STYLEBOX)
+    card_ui.card_visual.apply_drag_style()
 
     minimum_drag_time_elapsed = false
     var threshold_timer = get_tree().create_timer(DRAG_MINIMUM_THRESHOLD)

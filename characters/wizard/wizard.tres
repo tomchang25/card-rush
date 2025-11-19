@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=4 format=3 uid="uid://diktgut6ejnip"]
+
+[ext_resource type="Script" uid="uid://dyyy7iusfx22p" path="res://custom_resources/character_stats.gd" id="1_idu3k"]
+[ext_resource type="Texture2D" uid="uid://dpfqok8tuy4r7" path="res://art/tile_0084.png" id="1_ielc2"]
+[ext_resource type="Resource" uid="uid://c062m2ball8rs" path="res://characters/wizard/wizard_starting_deck.tres" id="3_ihxtb"]
+
+[resource]
+script = ExtResource("1_idu3k")
+character_name = "Wizard"
+description = "Like to bomb something."
+starting_deck = ExtResource("3_ihxtb")
+cards_per_turn = 5
+max_mana = 10
+max_health = 100
+art = ExtResource("1_ielc2")
+metadata/_custom_type_script = "uid://dyyy7iusfx22p"

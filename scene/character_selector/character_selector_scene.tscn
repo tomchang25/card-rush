@@ -1,0 +1,176 @@
+[gd_scene load_steps=11 format=3 uid="uid://byyiia44rdrpg"]
+
+[ext_resource type="Script" uid="uid://d27iv0icoderp" path="res://scene/character_selector/character_selector_scene.gd" id="1_bm3jp"]
+[ext_resource type="Texture2D" uid="uid://cwf6dyi56tgo" path="res://art/tile_0088.png" id="2_ia3p6"]
+[ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="3_y1xni"]
+[ext_resource type="Texture2D" uid="uid://pgj8vfpj6tc5" path="res://art/tile_0130.png" id="4_41hqd"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/tile_0103.png" id="5_vkjyq"]
+
+[sub_resource type="Gradient" id="Gradient_prcqd"]
+colors = PackedColorArray(0.2, 0.117647, 0.0509804, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s6uko"]
+gradient = SubResource("Gradient_prcqd")
+width = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_prcqd"]
+line_spacing = 10.0
+shadow_size = 4
+shadow_color = Color(0.74, 0.74, 0.74, 0.247059)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lnebh"]
+line_spacing = 10.0
+font_size = 24
+shadow_size = 4
+shadow_color = Color(0.74, 0.74, 0.74, 0.247059)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_bso45"]
+
+[node name="CharacterSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bm3jp")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_s6uko")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.5
+offset_top = 5.0
+offset_right = 28.5
+offset_bottom = 45.0
+grow_horizontal = 2
+
+[node name="Description" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Likes to slice things up.
+Second line of text."
+label_settings = SubResource("LabelSettings_prcqd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Warrior"
+label_settings = SubResource("LabelSettings_lnebh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharacterPortrait" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = 0.511
+anchor_right = 0.075
+anchor_bottom = 0.511
+offset_top = 0.0199966
+offset_right = 60.0
+offset_bottom = 60.02
+texture = ExtResource("2_ia3p6")
+
+[node name="StartButton" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 14)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.872
+anchor_top = 0.889
+anchor_right = 0.872
+anchor_bottom = 0.889
+offset_left = -25.04
+offset_top = -7.02
+offset_right = 24.96
+offset_bottom = 6.98
+grow_horizontal = 0
+grow_vertical = 0
+text = "Start"
+
+[node name="CharacterButtonGroup" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 156.0
+offset_top = 91.0
+offset_right = 276.0
+offset_bottom = 121.0
+theme_override_constants/separation = 15
+
+[node name="WarriorButton" type="Button" parent="CharacterButtonGroup"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_bso45")
+
+[node name="Icon" type="TextureRect" parent="CharacterButtonGroup/WarriorButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_y1xni")
+
+[node name="WizardButton" type="Button" parent="CharacterButtonGroup"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_bso45")
+
+[node name="Icon" type="TextureRect" parent="CharacterButtonGroup/WizardButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_41hqd")
+
+[node name="AssassinButton" type="Button" parent="CharacterButtonGroup"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_bso45")
+
+[node name="Icon" type="TextureRect" parent="CharacterButtonGroup/AssassinButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_vkjyq")

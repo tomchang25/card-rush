@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dphurrbfd380a"]
+[gd_scene load_steps=11 format=3 uid="uid://dphurrbfd380a"]
 
 [ext_resource type="Theme" uid="uid://den0c88qxg2fn" path="res://main_theme.tres" id="1_2j6d7"]
 [ext_resource type="Script" uid="uid://b4mr2omo8tyod" path="res://scene/card_ui/card_ui.gd" id="2_vbdtx"]
-[ext_resource type="StyleBox" uid="uid://cc0twsxsyicoq" path="res://scene/card_ui/card_hover_stylebox.tres" id="3_1vc4d"]
-[ext_resource type="Texture2D" uid="uid://dojlh80rte165" path="res://art/tile_0107.png" id="3_52ebv"]
+[ext_resource type="PackedScene" uid="uid://py64ndp06xei" path="res://scene/card_ui/card_visual.tscn" id="3_52ebv"]
 [ext_resource type="Script" uid="uid://bebvrhnu8kyej" path="res://scene/card_ui/card_state_machine.gd" id="3_aurxg"]
 [ext_resource type="Script" uid="uid://ktdwbvijycni" path="res://scene/card_ui/card_state/card_base_state.gd" id="4_go404"]
 [ext_resource type="Script" uid="uid://djilqrcfw5315" path="res://scene/card_ui/card_state/card_clicked_state.gd" id="5_52ebv"]
@@ -23,53 +22,9 @@ offset_bottom = 40.0
 theme = ExtResource("1_2j6d7")
 script = ExtResource("2_vbdtx")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = ExtResource("3_1vc4d")
-
-[node name="Cost" type="Label" parent="."]
-custom_minimum_size = Vector2(16, 16)
-layout_mode = 1
-offset_right = 16.0
-offset_bottom = 16.0
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Index" type="Label" parent="."]
-visible = false
-custom_minimum_size = Vector2(16, 16)
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -16.0
-offset_bottom = 16.0
-grow_horizontal = 0
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Icon" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_52ebv")
+[node name="CardVisual" parent="." instance=ExtResource("3_52ebv")]
+offset_right = 30.0
+offset_bottom = 40.0
 
 [node name="DropPointDetector" type="Area2D" parent="."]
 collision_mask = 2

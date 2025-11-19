@@ -13,9 +13,10 @@ class CardStylebox:
 
 # @onready var color: ColorRect = $Color
 # @onready var state: Label = $State
-@onready var panel: Panel = $Panel
-@onready var cost: Label = $Cost
-@onready var icon: TextureRect = $Icon
+# @onready var panel: Panel = $Panel
+# @onready var cost: Label = $Cost
+# @onready var icon: TextureRect = $Icon
+@onready var card_visual: CardVisual = $CardVisual
 
 @onready var card_state_machine: CardStateMachine = $CardStateMachine
 @onready var drop_point_detector: Area2D = $DropPointDetector
@@ -79,10 +80,7 @@ func _set_card(new_card: Card) -> void:
         await ready
 
     card = new_card
-
-    icon.texture = card.icon
-    cost.text = str(card.cost)
-    #$Index.text = str(self.original_index)
+    card_visual.card = card
 
 func _set_char_stats(new_stats: CharacterStats) -> void:
     char_stats = new_stats
@@ -93,17 +91,26 @@ func animate_to_position(new_position: Vector2, duration: float) -> void:
     tween.tween_property(self, "global_position", new_position, duration)
 
 func set_stylebox(stylebox: StyleBox) -> void:
-    panel.set("theme_override_styles/panel", stylebox)
+    card_visual.set_stylebox(stylebox)
 
 func set_playable(new_playable: bool) -> void:
     playable = new_playable
 
-    if not playable:
-        cost.add_theme_color_override("font_color", Color.RED)
-        icon.modulate.a = 0.5
+    # Delegate the visual changes to the visuals node
+    if playable:
+        card_visual.apply_playable_style()
     else:
-        cost.remove_theme_color_override("font_color")
-        icon.modulate.a = 1
+        card_visual.apply_unplayable_style()
+
+# func set_playable(new_playable: bool) -> void:
+#     playable = new_playable
+
+#     if not playable:
+#         cost.add_theme_color_override("font_color", Color.RED)
+#         icon.modulate.a = 0.5
+#     else:
+#         cost.remove_theme_color_override("font_color")
+#         icon.modulate.a = 1
 
 func play() -> void:
     if not card:

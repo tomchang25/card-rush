@@ -8,7 +8,7 @@ enum Type {WIN, LOSE}
 
 
 func _ready() -> void:
-    continue_button.pressed.connect(get_tree().quit)
+    continue_button.pressed.connect(Events.battle_won.emit)
     restart_button.pressed.connect(_on_restart_button_pressed)
     Events.battle_over_screen_requested.connect(show_screen)
     hide()
@@ -20,7 +20,7 @@ func show_screen(text: String, type: Type) -> void:
     restart_button.visible = type == Type.LOSE
     show()
     get_tree().paused = true
-    
+
 func _on_restart_button_pressed() -> void:
     get_tree().paused = false
     get_tree().reload_current_scene()

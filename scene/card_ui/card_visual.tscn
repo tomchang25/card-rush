@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://py64ndp06xei"]
+
+[ext_resource type="Texture2D" uid="uid://dojlh80rte165" path="res://art/tile_0107.png" id="1_a466r"]
+[ext_resource type="Script" uid="uid://cybx7efjfnnyv" path="res://scene/card_ui/card_visual.gd" id="1_neyhb"]
+
+[node name="CardVisual" type="Control"]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_neyhb")
+
+[node name="StylePanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CostLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 14.0
+offset_bottom = 15.0
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_a466r")

@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://qn35l8gqs5d4"]
+
+[ext_resource type="Script" uid="uid://cs13elw2pdmcg" path="res://scene/run/run_scene.gd" id="1_s04sr"]
+[ext_resource type="PackedScene" uid="uid://bj0hbn1mmrjql" path="res://scene/map/map.tscn" id="2_ap1ci"]
+
+[node name="Run" type="Node"]
+script = ExtResource("1_s04sr")
+
+[node name="Map" parent="." instance=ExtResource("2_ap1ci")]
+
+[node name="CurrentView" type="Node" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BattleButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Battle"
+
+[node name="BattleRewardButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Reward"
+
+[node name="MapButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Map"
+
+[node name="ShopButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Shop"
+
+[node name="TreasureRoomButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Treasure"
+
+[node name="CampfireButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Campfire"
